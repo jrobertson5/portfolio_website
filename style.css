@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0 2rem;
+    color: #252522;
+    background-color: #f5f2eb;
+    font: 1rem/1.7 Arial, Helvetica, sans-serif;
+}
+
+body > header,
+body > main,
+body > footer,
+body > hr {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+}
+
+body > header {
+    padding: 4.5rem 0 1.5rem;
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 5.75rem);
+    font-weight: normal;
+    line-height: 1.05;
+    letter-spacing: -0.055em;
+}
+
+header p {
+    margin: 1.25rem 0 0;
+    color: #625d55;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+nav {
+    margin-top: 2.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.35rem 0;
+    color: #625d55;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: #a3452c;
+    border-bottom-color: #a3452c;
+}
+
+nav a[aria-current="page"] {
+    color: #252522;
+    border-bottom-color: #a3452c;
+}
+
+a {
+    color: #a3452c;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: #252522;
+}
+
+a:focus-visible {
+    outline: 2px solid #a3452c;
+    outline-offset: 5px;
+}
+
+hr {
+    height: 0;
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #cec7bb;
+}
+
+body > hr {
+    margin-block: 0;
+    border-top: 2px solid #252522;
+}
+
+main {
+    padding-bottom: 1rem;
+    counter-reset: resume-section;
+}
+
+main > section {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    column-gap: 3rem;
+    padding: 2.75rem 0;
+    border-bottom: 1px solid #cec7bb;
+    counter-increment: resume-section;
+}
+
+main > section > h2 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+}
+
+main > section > :not(h2) {
+    grid-column: 2;
+    min-width: 0;
+}
+
+main > section > h2 + * {
+    grid-row: 1;
+}
+
+h2 {
+    margin: 2rem 0 1rem;
+    color: #252522;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+main > section > h2::before {
+    content: counter(resume-section, decimal-leading-zero) " /";
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #a3452c;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+}
+
+h3 {
+    margin: 0 0 0.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+h4,
+h5,
+h6 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+article {
+    margin: 0;
+}
+
+article + article {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #cec7bb;
+}
+
+article > :last-child {
+    margin-bottom: 0;
+}
+
+article > h3 + p {
+    color: #625d55;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.82rem;
+    line-height: 1.8;
+}
+
+.employer {
+    color: #252522;
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+main ul,
+main ol {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+main ul {
+    list-style-type: square;
+}
+
+main ol {
+    list-style-type: decimal;
+}
+
+main li {
+    margin-bottom: 0.7rem;
+    padding-left: 0.25rem;
+}
+
+main li::marker {
+    color: #a3452c;
+}
+
+main li:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+caption {
+    padding: 0 0 1rem;
+    color: #625d55;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.75rem;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.9rem 0.65rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #cec7bb;
+    overflow-wrap: anywhere;
+}
+
+thead th {
+    padding-top: 0.75rem;
+    color: #a3452c;
+    border-top: 2px solid #252522;
+    border-bottom: 1px solid #252522;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: normal;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+
+tbody th {
+    font-weight: bold;
+}
+
+th:first-child,
+td:first-child {
+    padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+#technical-skills th:first-child {
+    width: 28%;
+}
+
+#projects th:first-child {
+    width: 30%;
+}
+
+body > footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    padding: 1.5rem 0 3rem;
+    color: #625d55;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.75rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+#current-date {
+    color: #625d55;
+    font-style: italic;
+}
