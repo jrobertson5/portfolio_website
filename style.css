@@ -73,11 +73,6 @@ nav a:hover {
     border-bottom-color: #a3452c;
 }
 
-nav a[aria-current="page"] {
-    color: #252522;
-    border-bottom-color: #a3452c;
-}
-
 a {
     color: #a3452c;
     text-decoration-thickness: 1px;
